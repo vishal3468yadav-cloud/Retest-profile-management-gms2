@@ -21,7 +21,7 @@ function AddProfile() {
         };
 
         await axios.post(
-            `${import.meta.env.VITE_API_URL}/profiles`,
+            `${import.meta.env.VITE_API_URL}/api/profiles`,
             newProfile
         );
 

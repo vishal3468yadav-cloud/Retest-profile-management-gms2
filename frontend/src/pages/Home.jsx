@@ -8,7 +8,7 @@ function Home() {
     useEffect(() => {
     const getProfiles = async () => {
         const response = await axios.get(
-            `${import.meta.env.VITE_API_URL}/profiles`
+            `${import.meta.env.VITE_API_URL}/api/profiles`
         );
 
         setProfiles(response.data);

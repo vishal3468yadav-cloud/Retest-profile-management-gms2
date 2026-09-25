@@ -45,7 +45,7 @@ function EditProfile() {
         };
 
         await axios.put(
-            `${import.meta.env.VITE_API_URL}/profiles/${id}`,
+            `${import.meta.env.VITE_API_URL}/api/profiles/${id}`,
             updatedProfile
         );
 
