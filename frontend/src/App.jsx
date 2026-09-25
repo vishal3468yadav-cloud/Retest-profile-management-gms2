@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import AddProfile from "../pages/AddProfile.jsx";
-import ViewProfile from "../pages/ViewProfile.jsx";
-import EditProfile from "../pages/EditProfile.jsx";
+import AddProfile from "./pages/AddProfile.jsx";
+import ViewProfile from "./pages/ViewProfile.jsx";
+import EditProfile from "./pages/EditProfile.jsx";
 
 function App() {
     return (
