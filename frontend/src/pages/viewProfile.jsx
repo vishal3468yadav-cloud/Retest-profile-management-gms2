@@ -23,7 +23,7 @@ function ViewProfile() {
     }, [id]);
 
     if (!profile) {
-        return <h2>Loading...</h2>;
+        return <h2>Loading</h2>;
     }
 
     return (
