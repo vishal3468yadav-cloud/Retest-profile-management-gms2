@@ -12,7 +12,7 @@ function EditProfile() {
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
     const [age, setAge] = useState("");
-
+    useEffect(() => {
     const getProfile = async () => {
 
         const response = await axios.get(
@@ -28,8 +28,8 @@ function EditProfile() {
         setAge(profile.age);
     };
 
-    useEffect(() => {
-        getProfile();
+    
+        getProfile ();
     }, [id]);
 
     const updateProfile = async (e) => {

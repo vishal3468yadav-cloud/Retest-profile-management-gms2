@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Home() {
     const [profiles, setProfiles] = useState([]);
     const navigate = useNavigate();
-
+    useEffect(() => {
     const getProfiles = async () => {
         const response = await axios.get(
             `${import.meta.env.VITE_API_URL}/profiles`
@@ -14,7 +14,7 @@ function Home() {
         setProfiles(response.data);
     };
 
-    useEffect(() => {
+    
         getProfiles();
     }, []);
 
@@ -26,7 +26,7 @@ function Home() {
 
         alert("Profile deleted successfully");
 
-        getProfiles();
+      
     };
 
     return (

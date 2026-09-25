@@ -7,6 +7,8 @@ function ViewProfile() {
     const { id } = useParams();
 
     const [profile, setProfile] = useState(null);
+    
+    useEffect(() => {
 
     const getProfile = async () => {
         const response = await axios.get(
@@ -16,8 +18,8 @@ function ViewProfile() {
         setProfile(response.data.data);
     };
 
-    useEffect(() => {
-        getProfile();
+    
+        getProfile()
     }, [id]);
 
     if (!profile) {
