@@ -10,7 +10,7 @@ function ViewProfile() {
 
     const getProfile = async () => {
         const response = await axios.get(
-            `http://localhost:5000/api/profiles/${id}`
+            `${import.meta.env.VITE_API_URL}/profiles/${id}`
         );
 
         setProfile(response.data.data);

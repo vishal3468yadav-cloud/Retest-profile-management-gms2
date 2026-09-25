@@ -21,7 +21,7 @@ function AddProfile() {
         };
 
         await axios.post(
-            "http://localhost:5000/api/profiles",
+            `${import.meta.env.VITE_API_URL}/profiles`,
             newProfile
         );
 
@@ -33,48 +33,54 @@ function AddProfile() {
         setAddress("");
         setAge("");
     };
-    return(
+
+    return (
         <div>
             <h1>Add profile</h1>
+
             <form onSubmit={addProfile}>
-            <input type="text" 
-            placeholder="Name"
-            value = {name}
-             onChange={(e) => setName(e.target.value)}
-             />
-             <input type="email" 
-            placeholder="Email"
-            value = {email}
-             onChange={(e) => setEmail(e.target.value)}
-             />
-             <input
-             type="text"
-             placeholder="Phone"
-             value={phone}
-             onChange={(e) => setPhone(e.target.value)}
+
+                <input
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                 />
-            <input
-             type="text"
-             placeholder="Address"
-             value={address}
-             onChange={(e) => setAddress(e.target.value)}
-             />
 
-             <input
-             type="number"
-             placeholder="Age"
-             value={age}
-             onChange={(e) => setAge(e.target.value)}
-             />
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
 
-             <button type="submit">
-             Add Profile
-            </button>
+                <input
+                    type="text"
+                    placeholder="Phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                />
 
-        </form>
+                <input
+                    type="text"
+                    placeholder="Address"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                />
 
+                <input
+                    type="number"
+                    placeholder="Age"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                />
+
+                <button type="submit">
+                    Add Profile
+                </button>
+
+            </form>
         </div>
-
     );
 }
 

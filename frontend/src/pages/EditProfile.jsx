@@ -16,7 +16,7 @@ function EditProfile() {
     const getProfile = async () => {
 
         const response = await axios.get(
-            `http://localhost:5000/api/profiles/${id}`
+            `${import.meta.env.VITE_API_URL}/profiles/${id}`
         );
 
         const profile = response.data.data;
@@ -45,7 +45,7 @@ function EditProfile() {
         };
 
         await axios.put(
-            `http://localhost:5000/api/profiles/${id}`,
+            `${import.meta.env.VITE_API_URL}/profiles/${id}`,
             updatedProfile
         );
 

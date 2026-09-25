@@ -1,37 +1,39 @@
-import {useEffect,useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Home(){
-    const [profiles,setProfiles] = useState([]);
+function Home() {
+    const [profiles, setProfiles] = useState([]);
     const navigate = useNavigate();
 
-
-    const getProfiles = async ()=>{
+    const getProfiles = async () => {
         const response = await axios.get(
-            "http://localhost:5000/api/profiles"
+            `${import.meta.env.VITE_API_URL}/profiles`
         );
+
         setProfiles(response.data);
     };
-    useEffect(()=>{
+
+    useEffect(() => {
         getProfiles();
-    },[])
+    }, []);
 
     const deleteProfile = async (id) => {
 
-    await axios.delete(
-        `http://localhost:5000/api/profiles/${id}`
-    );
+        await axios.delete(
+            `${import.meta.env.VITE_API_URL}/profiles/${id}`
+        );
 
-    alert("Profile deleted successfully");
+        alert("Profile deleted successfully");
 
-    getProfiles();
-};
+        getProfiles();
+    };
 
-    return(
+    return (
         <div>
-            <h1>profile management system</h1>
-             {profiles.map((profile) => (
+            <h1>Profile Management System</h1>
+
+            {profiles.map((profile) => (
                 <div key={profile.id}>
                     <h2>{profile.name}</h2>
                     <p>Email: {profile.email}</p>
